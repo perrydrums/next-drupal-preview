@@ -1,0 +1,39 @@
+{
+  "name": "next-drupal-preview",
+  "version": "0.0.1",
+  "description": "Preview and front-end editing for decoupled Drupal + NextJS applications",
+  "main": "dist/index.js",
+  "module": "dist/frontend-editing.min.esm.js",
+  "types": "dist/frontend-editing.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perrydrums/next-drupal-preview.git"
+  },
+  "keywords": [
+    "headless",
+    "drupal",
+    "preview"
+  ],
+  "author": "Perry Janssen perry.janssen@iodigital.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perrydrums/next-drupal-preview/issues"
+  },
+  "homepage": "https://github.com/perrydrums/next-drupal-preview#readme",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.19",
+    "next": "^12.1.0",
+    "ts-standard": "*",
+    "typescript": "^4.3.2"
+  },
+  "ts-standard": {
+    "ignore": [
+      "dist/"
+    ]
+  }
+}
