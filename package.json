@@ -1,11 +1,16 @@
 {
   "name": "next-drupal-preview",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Preview and front-end editing for decoupled Drupal + NextJS applications",
-  "main": "dist/index.js",
-  "module": "dist/frontend-editing.min.esm.js",
-  "types": "dist/frontend-editing.d.ts",
-  "scripts": {},
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/perrydrums/next-drupal-preview.git"
@@ -31,7 +36,8 @@
   "devDependencies": {
     "@types/react": "^17.0.19",
     "next": "^12.1.0",
-    "ts-standard": "*",
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.1",
     "typescript": "^4.3.2",
     "typescript-plugin-css-modules": "^5.0.2"
   },

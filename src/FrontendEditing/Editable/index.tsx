@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ReactNode, ReactSVGElement, useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 
-import EditForm from '../Editform';
+import EditForm from '../EditForm';
 import { Edit } from '../../icons';
 
 interface Props {

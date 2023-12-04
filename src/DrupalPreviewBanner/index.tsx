@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import styles from './styles.module.css';
 
-interface EditInCMSProps {
+interface DrupalPreviewBannerProps {
   id: string
   cmsUrl: string
   clearPreviewUrl?: string
 }
 
-export function EditInCMS (props: EditInCMSProps): React.JSX.Element {
+export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): React.JSX.Element {
   const mediaMatch = window.matchMedia('(max-width: 1024px)');
   const [matches, setMatches] = useState(mediaMatch.matches);
 
