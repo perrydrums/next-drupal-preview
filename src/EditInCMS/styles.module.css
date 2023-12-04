@@ -1,0 +1,79 @@
+.banner {
+  position: fixed;
+  z-index: 10;
+  bottom: 2.4rem;
+  left: 0;
+  right: 0;
+  color: #232429;
+  font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.innerWrapper {
+  background-color: white;
+  padding: 1.6rem;
+  grid-column: 4/-4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.125rem;
+  backdrop-filter: blur(13px);
+  outline: 1px solid #919297;
+}
+
+.innerWrapper:hover {
+  outline: 2px solid #232429;
+}
+
+.buttonIcon {
+  margin-left: 1.8rem;
+}
+
+.button {
+  outline: none;
+  background-color: #003cc5;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: calc(1rem - 1px) calc(1.5rem - 1px);
+  align-items: center;
+  min-height: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 2px;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  flex-shrink: 0;
+  display: inline-flex;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.button:hover,
+.button:focus {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+}
+
+.button:focus {
+  outline: 2px solid white;
+}
+
+.buttonSecondary {
+  background-color: #dc2323;
+  margin-right: 0;
+}
+
+.grid {
+  --grid-column-count: 12;
+  --column-gap: .8rem;
+  --grid-padding: 1.6rem;
+
+  display: grid;
+  grid-template-columns: var(--grid-padding) repeat(var(--grid-column-count), 1fr) var(--grid-padding);
+  grid-column-gap: var(--column-gap);
+}
+
