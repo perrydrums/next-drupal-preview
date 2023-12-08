@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Edit, Close } from '../icons';
 import Link from 'next/link';
 import { useEffect, useState } from "react";
-import styles from './styles.module.css';
+import './styles.css';
 
 interface DrupalPreviewBannerProps {
   id: string
@@ -39,16 +39,16 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
   });
 
   return (
-    <div className={styles.banner} style={{color}}>
-      <div className={styles.grid}>
-        <div className={styles.innerWrapper} style={{backgroundColor, outlineColor: borderColor}}>
-          <h5 className={styles.title}>Preview mode</h5>
+    <div className="drupal-preview-banner" style={{color}}>
+      <div className="grid">
+        <div className="inner-wrapper" style={{backgroundColor, outlineColor: borderColor}}>
+          <h5 className="title">Preview mode</h5>
           <div>
             <Link
               href={`${props.cmsUrl}/node/${props.id}/edit`}
             >
               <a
-                className={styles.button}
+                className="button"
                 style={{backgroundColor: buttonColor, color: buttonTextColor}}
                 type='button'
               >
@@ -60,7 +60,7 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
               href={props.clearPreviewUrl ?? '/api/preview/clear'}
             >
               <a
-                className={`${styles.button} ${styles.buttonSecondary}`}
+                className="button button--secondary"
                 style={{backgroundColor: buttonSecondaryColor, color: buttonSecondaryTextColor}}
                 type='button'
               >

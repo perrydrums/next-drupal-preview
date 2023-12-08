@@ -1,5 +1,4 @@
 import { defineConfig } from 'tsup';
-import CssModulesPlugin from 'esbuild-css-modules-plugin';
 
 export default defineConfig({
   entry: ["src/index.ts"],
@@ -8,13 +7,4 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  esbuildPlugins: [
-    CssModulesPlugin({
-      force: true,
-      emitDeclarationFile: true,
-      localsConvention: 'camelCaseOnly',
-      namedExports: true,
-      inject: false
-    }),
-  ],
 });

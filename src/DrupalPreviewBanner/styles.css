@@ -1,4 +1,4 @@
-.banner {
+.drupal-preview-banner {
   position: fixed;
   z-index: 10;
   bottom: 2.4rem;
@@ -8,12 +8,12 @@
   font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif';
 }
 
-.title {
+.drupal-preview-banner .title {
   margin: 0;
   font-size: 2rem;
 }
 
-.innerWrapper {
+.drupal-preview-banner .inner-wrapper {
   background-color: #ffffff;
   padding: 1.6rem;
   grid-column: 4/-4;
@@ -25,15 +25,15 @@
   outline: 1px solid #919297;
 }
 
-.innerWrapper:hover {
+.drupal-preview-banner .inner-wrapper:hover {
   outline: 2px solid #232429;
 }
 
-.buttonIcon {
+.drupal-preview-banner .button-icon {
   margin-left: 1.8rem;
 }
 
-.button {
+.drupal-preview-banner .button {
   outline: none;
   background-color: #003cc5;
   color: white;
@@ -52,22 +52,16 @@
   margin-right: 2rem;
 }
 
-.button:hover,
-.button:focus {
-  /*outline: 2px dotted transparent;*/
-  /*box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;*/
-}
-
-.button:focus {
+.drupal-preview-banner .button:focus {
   outline: 2px solid white;
 }
 
-.buttonSecondary {
+.drupal-preview-banner .button--secondary {
   background-color: #dc2323;
   margin-right: 0;
 }
 
-.grid {
+.drupal-preview-banner .grid {
   --grid-column-count: 12;
   --column-gap: .8rem;
   --grid-padding: 1.6rem;
