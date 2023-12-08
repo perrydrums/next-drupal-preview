@@ -8,11 +8,29 @@ interface DrupalPreviewBannerProps {
   id: string
   cmsUrl: string
   clearPreviewUrl?: string
+
+  // Styling.
+  textColor?: string
+  backgroundColor?: string
+  buttonColor?: string
+  buttonSecondaryColor?: string
+  buttonTextColor?: string
+  buttonSecondaryTextColor?: string
+  borderColor?: string
+  outline?: string
 }
 
 export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): React.JSX.Element {
   const mediaMatch = window.matchMedia('(max-width: 1024px)');
   const [matches, setMatches] = useState(mediaMatch.matches);
+
+  const color = props.textColor ?? '#232429';
+  const backgroundColor = props.backgroundColor ?? '#ffffff';
+  const buttonColor = props.buttonColor ?? '#003cc5';
+  const buttonSecondaryColor = props.buttonSecondaryColor ?? '#dc2323';
+  const buttonTextColor = props.buttonTextColor ?? '#ffffff';
+  const buttonSecondaryTextColor = props.buttonSecondaryTextColor ?? '#ffffff';
+  const borderColor = props.borderColor ?? '#919297';
 
   useEffect(() => {
     const handler = (e: MediaQueryListEvent): ReturnType<any> => { setMatches(e.matches) }
@@ -21,9 +39,9 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
   });
 
   return (
-    <div className={styles.banner}>
+    <div className={styles.banner} style={{color}}>
       <div className={styles.grid}>
-        <div className={styles.innerWrapper}>
+        <div className={styles.innerWrapper} style={{backgroundColor, outlineColor: borderColor}}>
           <h5 className={styles.title}>Preview mode</h5>
           <div>
             <Link
@@ -31,6 +49,7 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
             >
               <a
                 className={styles.button}
+                style={{backgroundColor: buttonColor, color: buttonTextColor}}
                 type='button'
               >
                 {!matches && <>Edit this page in CMS &nbsp;</>}
@@ -42,6 +61,7 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
             >
               <a
                 className={`${styles.button} ${styles.buttonSecondary}`}
+                style={{backgroundColor: buttonSecondaryColor, color: buttonSecondaryTextColor}}
                 type='button'
               >
                 {!matches && <> Close preview mode &nbsp;</>}

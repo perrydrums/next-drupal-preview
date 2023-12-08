@@ -14,7 +14,7 @@
 }
 
 .innerWrapper {
-  background-color: white;
+  background-color: #ffffff;
   padding: 1.6rem;
   grid-column: 4/-4;
   display: flex;
@@ -54,8 +54,8 @@
 
 .button:hover,
 .button:focus {
-  outline: 2px dotted transparent;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+  /*outline: 2px dotted transparent;*/
+  /*box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;*/
 }
 
 .button:focus {
