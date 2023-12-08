@@ -1,6 +1,6 @@
 {
   "name": "next-drupal-preview",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Preview and front-end editing for decoupled Drupal + NextJS applications",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
