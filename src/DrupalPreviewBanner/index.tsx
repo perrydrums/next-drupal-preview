@@ -77,7 +77,7 @@ export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): R
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          borderRadius: '0.125rem',
+          borderRadius: '0.4rem',
           backdropFilter: 'blur(13px)',
         }}>
           <h5 style={{margin: 0, fontSize: '2rem'}}>Preview mode</h5>
