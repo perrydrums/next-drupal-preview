@@ -36,10 +36,33 @@ export default function EditForm ({ id, type, cmsUrl, token, onSave, hide }: Pro
     src.searchParams.set('jwt', token);
   }
 
+  const animations = `
+    @keyframes slide-in-full {
+      from {
+        width: 0;
+      }
+    
+      to {
+        width: 100vw;
+      }
+    }
+    
+    @keyframes slide-in-half {
+      from {
+        width: 0;
+      }
+    
+      to {
+        width: 70vw;
+      }
+    }
+  `;
+
   return (
     <>
-      <div onClick={hide} style={{ position: 'fixed', zIndex: 9998, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', top: 0, right: 0, cursor: 'pointer' }} />
-      <iframe src={src.toString()} style={{ position: 'fixed', top: 0, right: 0, resize: 'horizontal', overflowX: 'scroll', overflowY: 'hidden', overscrollBehaviorX: 'contain', zIndex: 9999, width: '70%', height: '100%', backgroundColor: 'white' }} />
+      <style>{animations}</style>
+      <div onClick={hide} style={{ animation: 'slide-in-full 0.4s ease-in forwards', position: 'fixed', zIndex: 9998, width: '0', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', top: 0, right: 0, cursor: 'pointer' }} />
+      <iframe src={src.toString()} style={{ animation: 'slide-in-half 0.3s forwards 0.3s', border: 'none', position: 'fixed', top: 0, right: 0, resize: 'horizontal', overflowX: 'scroll', overflowY: 'hidden', overscrollBehaviorX: 'contain', zIndex: 9999, width: '0', height: '100%', backgroundColor: 'white' }} />
     </>
   )
 }
