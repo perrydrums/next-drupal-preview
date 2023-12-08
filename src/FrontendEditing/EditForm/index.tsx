@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
 
 interface Props {
   id: string
@@ -8,11 +7,10 @@ interface Props {
   token: string | null
   onSave: any
   hide: any
+  locale?: string
 }
 
-export default function EditForm ({ id, type, cmsUrl, token, onSave, hide }: Props): JSX.Element {
-  const router = useRouter();
-
+export default function EditForm ({ id, type, cmsUrl, token, onSave, hide, locale }: Props): JSX.Element {
   React.useEffect(() => {
     // Execute the onSave function.
     function onReceiveMessage (event: any): void {
@@ -29,7 +27,7 @@ export default function EditForm ({ id, type, cmsUrl, token, onSave, hide }: Pro
   })
 
   // Build the URL for the iFrame.
-  const src = new URL(`${cmsUrl}/frontend-editing/edit/${type}/${id}/${router?.locale ?? 'en'}`);
+  const src = new URL(`${cmsUrl}/frontend-editing/edit/${type}/${id}${locale ? '/' + locale : ''}`);
 
   // Set JSON web token for authorization.
   if (typeof token === 'string') {
