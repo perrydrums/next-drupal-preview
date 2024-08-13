@@ -19,8 +19,10 @@ export default function Editable ({ id, type, cmsUrl, token, children, color }: 
   const onSave = (hideForm: () => void): void => {
     setTimeout(() => hideForm(), 100)
     setTimeout(() => {
-      const url = new URL(window.location.toString())
-      window.location.replace(url.toString())
+      if (window !== undefined) {
+        const url = new URL(window.location.toString())
+        window.location.replace(url.toString())
+      }
     }, 500)
   };
 

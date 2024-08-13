@@ -21,9 +21,11 @@ export default function EditForm ({ id, type, cmsUrl, token, onSave, hide, local
       }
     }
 
-    // Listen for messages coming from the iFrame.
-    window.addEventListener('message', onReceiveMessage, false);
-    return () => window.removeEventListener('message', onReceiveMessage, false);
+    if (window !== undefined) {
+      // Listen for messages coming from the iFrame.
+      window.addEventListener('message', onReceiveMessage, false);
+      return () => window.removeEventListener('message', onReceiveMessage, false);
+    }
   })
 
   // Build the URL for the iFrame.
