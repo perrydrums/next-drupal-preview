@@ -20,7 +20,7 @@ interface DrupalPreviewBannerProps {
 }
 
 export default function DrupalPreviewBanner (props: DrupalPreviewBannerProps): React.JSX.Element {
-  const mediaMatch = window.matchMedia('(max-width: 1024px)');
+  const mediaMatch = typeof window !== 'undefined' ? window.matchMedia('(max-width: 1024px)') : { matches: false } as MediaQueryList;
   const [matches, setMatches] = useState(mediaMatch.matches);
 
   useEffect(() => {
